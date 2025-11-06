@@ -1,28 +1,24 @@
-import { useState } from 'react'
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import SearchOrbit from "./components/SearchOrbit";
+import DiscoveryFeed from "./components/DiscoveryFeed";
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-[#0b0213] relative">
+      {/* Starfield gradient background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,0,255,0.08),transparent_40%),radial-gradient(circle_at_80%_30%,rgba(199,75,189,0.12),transparent_45%),radial-gradient(circle_at_50%_80%,rgba(124,58,237,0.12),transparent_45%)]" />
+
+      <Header />
+      <main className="relative z-10">
+        <Hero />
+        <SearchOrbit />
+        <DiscoveryFeed />
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
